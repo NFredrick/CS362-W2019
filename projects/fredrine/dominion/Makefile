@@ -56,3 +56,15 @@ unittestresults: dominion.o unittest1.o unittest2.o unittest3.o unittest4.o card
 	cardtest3.exe >> unittestresults.out
 	cardtest4.exe >> unittestresults.out
 	gcov -f dominion.c >> unittestresults.out
+
+randomtest: dominion.o randomtestadventurer.o randomtestcard1.o randomtestcard2.o
+	gcc -o randomtestadventurer.exe randomtestadventurer.o dominion.o rngs.o $(CFLAGS) -coverage
+	gcc -o randomtestcard1.exe randomtestcard1.o dominion.o rngs.o $(CFLAGS) -coverage
+	gcc -o randomtestcard2.exe randomtestcard2.o dominion.o rngs.o $(CFLAGS) -coverage
+	randomtestcard1.exe
+	gcov -f dominion.c >> randomtestcard1.out
+	randomtestcard2.exe
+	gcov -f dominion.c >> randomtestcard2.out
+	randomtestadventurer.exe	
+	gcov -f dominion.c >> randomtestadventurer.out
+
