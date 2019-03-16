@@ -68,14 +68,14 @@ public class MyURLValidatorTests extends TestCase {
 	public void testIsValid9() {
 		UrlValidator urlValidator = setup();
 		String url = "html://www.google.com";
-		assertTrue(urlValidator.isValid(url));
+		assertTrue(urlValidator.isValid(url) == false);
 	}
 	
 	@Test
 	public void testIsValid10() {
 		UrlValidator urlValidator = setup();
 		String url = "http:/www.google.com";
-		assertTrue(urlValidator.isValid(url));
+		assertTrue(urlValidator.isValid(url) == false);
 	}
 	
 	
