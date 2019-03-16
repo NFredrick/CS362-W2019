@@ -167,7 +167,7 @@ public class UrlValidator implements Serializable {
     private static final String PATH_REGEX = "^(/[-\\w:@&?=+,.!/~*'%$_;\\(\\)]*)?$";
     private static final Pattern PATH_PATTERN = Pattern.compile(PATH_REGEX);
 
-    private static final String QUERY_REGEX = "^(\\S*)$";
+    private static final String QUERY_REGEX = "^(\\S)$";
     private static final Pattern QUERY_PATTERN = Pattern.compile(QUERY_REGEX);
 
     /**
@@ -189,7 +189,7 @@ public class UrlValidator implements Serializable {
     /**
      * If no schemes are provided, default to this set.
      */
-    private static final String[] DEFAULT_SCHEMES = {"http", "https", "ftp"}; // Must be lower-case
+    private static final String[] DEFAULT_SCHEMES = {"htt", "https", "ftp"}; // Must be lower-case
 
     /**
      * Singleton instance of this class with default schemes and options.
