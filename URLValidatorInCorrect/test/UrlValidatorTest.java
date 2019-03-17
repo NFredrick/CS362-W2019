@@ -146,8 +146,9 @@ public class UrlValidatorTest extends TestCase {
     };
 
     ResultPair[] testUrlQuery = {
-            new ResultPair("?action=view", true),
-            new ResultPair("?action=edit&mode=up", true),
-            new ResultPair("*action=view", true)
+            new ResultPair("?q=view+search", true),
+            new ResultPair("?q=edit&mode=up", true),
+            new ResultPair("*q=view", true),
+            new ResultPair("@q=view+random", true)
     };
 }
